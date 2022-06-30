@@ -20,13 +20,12 @@ root.render(
         position="top-right"
         icon={true}
         theme="dark"
-        autoClose={5000}
+        autoClose={3500}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
         rtl={false}
         draggable
-        pauseOnHover
       />
     </Provider>
   </React.StrictMode>

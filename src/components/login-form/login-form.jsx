@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import classess from "./style.module.scss";
 import logo from "./../../assets/app_logo/app_l.png";
@@ -15,15 +15,11 @@ import Stack from '@mui/material/Stack';
 import google from "./../../assets/google.svg";
 import linkedin from "./../../assets/linkedin.svg";
 import instagram from "./../../assets/instagram.svg";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { login } from '../../redux/slice/auth';
-import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
-
     const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const user = useSelector((state) => state.auth.user);
 
     const onSubmit = (event) => {
         event.preventDefault();
@@ -40,11 +36,6 @@ const LoginForm = () => {
         event.target.email.value = ""
         event.target.password.value = ""
     }
-
-    // useEffect(() => {
-    //     navigate("/dashboard")
-    // }, []);
-
     return (
         <Box className={classess.section} component="div">
             <Box component="div" className={classess.section__header}>
@@ -56,7 +47,7 @@ const LoginForm = () => {
                     <label className={classess.section__form__formfield__label}>E-mail ID</label>
                     <FormControl variant="filled" color='info' fullWidth>
                         <InputLabel htmlFor="component-filled">Email ID</InputLabel>
-                        <FilledInput id="component-filled" name="email" type='email' className={classess.section__form__formfield__inputs} required />
+                        <FilledInput id="component-filled" name="email" type='text' className={classess.section__form__formfield__inputs} required />
                     </FormControl>
                 </Box>
                 <Box component="div" className={classess.section__form__formfield}>
@@ -68,8 +59,8 @@ const LoginForm = () => {
                 </Box>
                 <FormControlLabel control={<Checkbox defaultChecked />} label="Remember me" sx={{ color: 'white' }} />
                 <Box component="div" className={classess.section__form__actions} sx={{ flexDirection: { xs: 'column', sm: 'column', lg: 'row' }, gap: { xs: 2, sm: 2, lg: 0 } }}>
-                    <Button type="submit" className={classess.section__form__actions__btn_pink} variant="contained" sx={{ width: { xs: '100%', xs: '100%', lg: '45%' } }}>Sign In</Button>
-                    <Button type='button' variant="contained" sx={{ background: "#36A1FF", width: { xs: '100%', xs: '100%', lg: '45%' } }}>Register now</Button>
+                    <Button type="submit" className={classess.section__form__actions__btn_pink} variant="contained" sx={{ width: { xs: '100%', sm: '100%', lg: '45%' } }}>Sign In</Button>
+                    <Button type='button' variant="contained" sx={{ background: "#36A1FF", width: { xs: '100%', sm: '100%', lg: '45%' } }}>Register now</Button>
                 </Box>
             </form>
             <Divider sx={{ background: '#286397', mt: 4, mb: 3 }} />
