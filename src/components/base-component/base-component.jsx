@@ -18,6 +18,10 @@ import HeaderMenu from "../header-menu/header-menu";
 import { Outlet, useNavigate } from "react-router-dom";
 import clientLogo from "../../assets/logo/logo-trans.png";
 import Logo from "../../assets/app_logo/app_l.png";
+import homeIcon from "../../assets/icons/Path 241.svg";
+import artistIcon from "../../assets/icons/Group 460.svg";
+import helpIcon from "../../assets/icons/Path 291.svg";
+import logoutIcon from "../../assets/icons/Group 394.svg";
 
 const BaseComponent = () => {
     const dispatch = useDispatch();
@@ -77,69 +81,83 @@ const BaseComponent = () => {
                 }}
             >
                 <List sx={{ marginLeft: 3 }}>
-                    <ListItem
-                        button
-                        key={4}
-                        onClick={() => {
-                            navigation("/");
-                        }}
-                    >
-                        <ListItemIcon>
-                            <PowerSettingsNewIcon
-                                sx={{ color: 'white' }}
-                                className={classess.appPage__drawer__icon}
-                            />
-                        </ListItemIcon>
-                        <ListItemText className={classess.appPage__drawer__text} primary={"Home"} />
-                    </ListItem>
-                    <ListItem
-                        button
-                        key={4}
-                        onClick={() => {
-                            navigation("/artist");
-                        }}
-                    >
-                        <ListItemIcon>
-                            <PowerSettingsNewIcon
-                                sx={{ color: 'white' }}
-                                className={classess.appPage__drawer__icon}
-                            />
-                        </ListItemIcon>
-                        <ListItemText className={classess.appPage__drawer__text} primary={"My Artists"} />
-                    </ListItem>
-                    <ListItem
-                        button
-                        key={4}
-                        onClick={() => {
-                            navigation("/login");
-                        }}
-                    >
-                        <ListItemIcon>
-                            <PowerSettingsNewIcon
-                                sx={{ color: 'white' }}
-                                className={classess.appPage__drawer__icon}
-                            />
-                        </ListItemIcon>
-                        <ListItemText className={classess.appPage__drawer__text} primary={"Help?"} />
-                    </ListItem>
-                    <ListItem
-                        button
-                        key={4}
-                        onClick={() => {
-                            handleDrawer();
-                            dispatch(logout());
-                            navigation("/login");
-                        }}
-                    >
-                        <ListItemIcon>
-                            <PowerSettingsNewIcon
-                                sx={{ color: 'white' }}
-                                className={classess.appPage__drawer__icon}
-                            />
-                        </ListItemIcon>
-                        <ListItemText className={classess.appPage__drawer__text} primary={"Logout"} />
-                    </ListItem>
+                    <Box className={classess.appPage__drawer__application_menu}>
+                        <ListItem
+                            button
+                            key={1}
+                            onClick={() => {
+                                navigation("/");
+                            }}
+                            className={classess.appPage__drawer__listitem}
+                        >
+                            <ListItemIcon>
+                                <img src={homeIcon} alt="" />
+                            </ListItemIcon>
+                            <label className={classess.appPage__drawer__text}>
+                                Home
+                            </label>
+                        </ListItem>
+                        <ListItem
+                            button
+                            key={2}
+                            onClick={() => {
+                                navigation("/artist");
+                            }}
+                            className={classess.appPage__drawer__listitem}
+                        >
+                            <ListItemIcon>
+                                <img src={artistIcon} alt="" />
+                            </ListItemIcon>
+                            <label className={classess.appPage__drawer__text}>
+                                My Artists
+                            </label>
+                        </ListItem>
+                    </Box>
+
+
+                    <Box className={classess.appPage__drawer__action_menu}>
+                        <ListItem
+                            button
+                            key={3}
+                            onClick={() => {
+                                navigation("/login");
+                            }}
+                            className={classess.appPage__drawer__listitem}
+                        >
+                            <ListItemIcon>
+                                <img src={helpIcon} alt="" />
+                            </ListItemIcon>
+                            <label className={classess.appPage__drawer__text}>
+                                Help?
+                            </label>
+                        </ListItem>
+                        <ListItem
+                            button
+                            key={4}
+                            onClick={() => {
+                                handleDrawer();
+                                dispatch(logout());
+                                navigation("/login");
+                            }}
+                            className={classess.appPage__drawer__listitem}
+                        >
+                            <ListItemIcon>
+                                <img src={logoutIcon} alt="" />
+                            </ListItemIcon>
+                            <label className={classess.appPage__drawer__text}>
+                                Logout
+                            </label>
+                        </ListItem>
+                    </Box>
                 </List>
+
+                <div className={classess.appPage__drawer__footer_icon} style={{ display: open ? 'flex' : 'none' }}>
+                    <img className={classess.appPage__drawer__footer_icon__image} src={Logo} alt="" />
+                    <div className={classess.appPage__drawer__footer_icon__content}>
+                        <span className={classess.appPage__drawer__footer_icon__content__small}>Powered by</span>
+                        <span className={classess.appPage__drawer__footer_icon__content__big}>Black Lion</span>
+                    </div>
+                </div>
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <Typography variant="div" component="div">
