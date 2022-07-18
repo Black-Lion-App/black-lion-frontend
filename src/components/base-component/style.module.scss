@@ -1,0 +1,50 @@
+.appPage {
+    min-height: 100vh;
+    background: radial-gradient(#1e0918, #060219);
+
+    &__appbar {
+        background: #100000 !important;
+        height: 100px;
+
+        &__client_logo {
+            height: 45px;
+            margin-top: 10px;
+        }
+
+        &__l_contain {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+
+        }
+    }
+
+    &__drawer {
+        &__logo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                height: 120px;
+            }
+
+            h2 {
+                text-transform: uppercase;
+            }
+        }
+
+        &__icon {
+            font-size: 2rem;
+            color: white !important;
+        }
+
+        &__text {
+            font-size: 2rem;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-left: 10px;
+        }
+    }
+}
