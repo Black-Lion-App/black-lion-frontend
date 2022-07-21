@@ -1,0 +1,50 @@
+.page {
+    &__title_bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__title {
+            color: white;
+
+        }
+
+        &__icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            img {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__banner {
+        background: linear-gradient(90deg, #0970A4 20%, #870033);
+        padding: 30px;
+        border-radius: 8px;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+        &__content {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+            align-items: flex-end;
+            &__title {
+                font-weight: bold;
+                // color: white;
+                width: 300px;
+            }   
+            &__description {
+                width: 500px;
+            }
+            &__button {
+
+            }
+        }
+    }
+}

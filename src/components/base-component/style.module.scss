@@ -6,6 +6,13 @@
         background: #100000 !important;
         height: 100px;
 
+        &__toolContainer {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         &__client_logo {
             height: 45px;
             margin-top: 10px;
@@ -20,67 +27,43 @@
     }
 
     &__drawer {
-        &__logo {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            img {
-                height: 120px;
-            }
-
-            h2 {
-                text-transform: uppercase;
-            }
-        }
-
-        &__listitem {
-            margin-top: 20px !important;
-        }
-
-        &__icon {
-            font-size: 2rem;
-            color: white !important;
-        }
-
-        &__text {
-            font-size: 1.5rem !important;
-            font-weight: 400;
-            color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin-left: 10px;
-        }
-
-        &__application_menu {
-            margin-top: 80px;
-        }
-
-        &__action_menu {
-            margin-top: 220px;
-        }
-
         &__footer_icon {
             display: flex;
             flex: 1;
             justify-content: center;
             align-items: center;
             gap: 10px;
+
             &__image {
                 height: 60px;
             }
+
             &__content {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+
                 &__small {
                     font-size: 12px;
                 }
+
                 &__big {
                     font-size: 18px;
                     text-transform: uppercase;
                 }
             }
         }
+    }
+
+    &__footer {
+        position: fixed;
+        bottom: 0;
+        height: 80px;
+        width: 100%;
+        color: white;
+        text-align: center;
+        padding-block: 10px;
+        margin: 0;
+        z-index: 9999;
     }
 }
